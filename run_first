@@ -5,9 +5,9 @@ require_relative 'git_utils.rb'
 REMOTE_REPO = "learn_js_with_bboyz"
 
 REMOTES = [
-  ["dad", "https://github:developwithpassion"],
-  ["joffer", "https://github.com/JoshuaSylv"],
-  ["zayah", "http://github.com/ZayahB"]
+  ["dad", "github:developwithpassion"],
+  ["joffer", "github:JoshuaSylv"],
+  ["zayah", "github:ZayahB"]
 ]
 
 def configure_remote
