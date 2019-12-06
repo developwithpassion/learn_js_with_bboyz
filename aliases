@@ -10,9 +10,7 @@ function back_to_working_dir(){
  cd $working_dir
 }
 
-# Source initial set of vars
-source bash_vars_dev
-
+# Source initial set of developer vars if they are available
 developer_vars="bash_vars_dev_$(whoami)"
 
 if [ -e $developer_vars ]
