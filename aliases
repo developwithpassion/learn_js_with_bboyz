@@ -1,0 +1,32 @@
+# Convenience vars and aliases for traversing back to root folder of this app
+root=$(pwd)
+
+function ch_root(){
+ working_dir=$(pwd)
+ cd $root
+}
+
+function back_to_working_dir(){
+ cd $working_dir
+}
+
+# Source initial set of vars
+source bash_vars_dev
+
+developer_vars="bash_vars_dev_$(whoami)"
+
+if [ -e $developer_vars ]
+then
+  source $developer_vars
+fi
+
+# Source  this aliases script and go back to the directory you were working in
+function sa() {
+  ch_root
+  source aliases
+  back_to_working_dir
+}
+
+alias sne='./start_new_exercise'
+alias smc='./save_my_changes'
+alias fl='./fetch_latest'

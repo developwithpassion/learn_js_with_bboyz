@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+require_relative 'git_utils.rb'
+
+REMOTE_REPO = "learn_js_with_bboyz"
+
+REMOTES = [
+  ["dad", "https://github:developwithpassion"],
+  ["joffer", "https://github.com/JoshuaSylv"],
+  ["zayah", "http://github.com/ZayahB"]
+]
+
+def configure_remote
+  REMOTES.each do |(name, remote)|
+    run_git_command("remote rm #{name}")
+    run_git_command("remote add #{name} #{remote}/#{REMOTE_REPO}.git")
+  end
+end
+
+def create_first_branches
+  %w[clean master starting_point master starting_point].each{|branch| checkout(branch)}
+end
+
+configure_remote
+create_first_branches
